@@ -4,11 +4,14 @@ const TransactionList = () => {
   const { transaction, setTransaction } = useTracker();
 
   return (
-    <div>
+    <div className="transactionList">
+      <h2>History</h2>
+      <hr />
       <ul>
         {transaction.map((transactions) => (
           <li key={transactions.id}>
-            {transactions.title} <span>${transactions.amount}</span>
+            <div>{transactions.title} </div>
+            <span>${transactions.amount}</span>
             <button
               onClick={() =>
                 setTransaction(
@@ -16,7 +19,7 @@ const TransactionList = () => {
                 )
               }
             >
-              Delete
+              X
             </button>
           </li>
         ))}

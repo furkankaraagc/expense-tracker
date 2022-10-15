@@ -15,12 +15,14 @@ const IncomeExpense = () => {
   }, [income, expense, setBalance, sumUpExpense, sumUpIncome]);
 
   return (
-    <div>
+    <div className="incomeExpense">
       <div className="income">
-        <h2>income:{sumUpIncome}</h2>
+        <h2>Income</h2>
+        <h2 className="amount">${sumUpIncome}.00</h2>
       </div>
       <div className="expense">
-        <h2>expense:{sumUpExpense}</h2>
+        <h2>Expense</h2>
+        <h2 className="amount">${sumUpExpense}.00</h2>
       </div>
     </div>
   );

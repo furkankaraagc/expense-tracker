@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 400px;
+  margin: 30px auto;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.header {
+  margin: 10px;
+}
+.header .header-text {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.incomeExpense {
+  border-radius: 20px;
+  margin: 30px 10px;
+  display: flex;
+  border: 1px solid;
+  text-align: center;
+}
+.incomeExpense .income,
+.incomeExpense .expense {
+  padding: 20px;
+  width: 100%;
+}
+.incomeExpense .income .amount {
+  color: green;
+}
+.incomeExpense .expense .amount {
+  color: red;
+}
+
+.addTransaction {
+  margin: 10px;
+}
+.addTransaction hr {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.addTransaction .form {
+  border: 1px solid;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 7px;
+}
+.addTransaction .form label {
+  font-size: 20px;
+}
+.addTransaction .form .title,
+.addTransaction .form .amount {
+  border-radius: 5px;
+  border: 1px solid grey;
+  height: 25px;
+  padding: 5px;
+}
+.addTransaction .form button {
+  padding: 5px;
+  font-size: 15px;
+}
+.addTransaction .form .radio {
+  display: flex;
+  flex-direction: column;
+}
+.addTransaction .form .radio input {
+  margin: 10px;
+}
+
+.transactionList {
+  margin: 30px 10px;
+}
+.transactionList hr {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.transactionList ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.transactionList ul li {
+  display: flex;
+  border: 1px solid;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.transactionList ul li span {
+  margin-left: 200px;
+}
+.transactionList ul button {
+  padding: 5px;
+}/*# sourceMappingURL=style.css.map */

@@ -44,37 +44,46 @@ const AddTransaction = () => {
   };
 
   return (
-    <>
-      <form action="">
-        <label htmlFor="title">
-          {" "}
-          Title:
-          <input
-            onChange={titleHandler}
-            value={title}
-            className="title"
-            type="text"
-            required
-          />
-        </label>
-        <label htmlFor="">
-          {" "}
-          Amount:
-          <input
-            onChange={amountHandler}
-            value={amount}
-            className="amount"
-            type="number"
-            required
-          />
-        </label>
-        <input ref={ref1} name="radio" type="radio" defaultChecked />
-        Income
-        <input ref={ref2} name="radio" type="radio" />
-        Expense
+    <div className="addTransaction">
+      <h2>Add Transaction</h2>
+      <hr />
+      <form className="form">
+        <label htmlFor="title"> Title:</label>
+        <input
+          onChange={titleHandler}
+          value={title}
+          className="title"
+          type="text"
+          required
+        />
+        <label htmlFor=""> Amount:</label>
+        <input
+          onChange={amountHandler}
+          value={amount}
+          className="amount"
+          type="number"
+          required
+        />
+        <div className="radio">
+          <div>
+            <input
+              ref={ref1}
+              className="radio1"
+              name="radio"
+              type="radio"
+              defaultChecked
+            />
+            <label htmlFor="radio1">Income</label>
+          </div>
+          <div>
+            <input ref={ref2} className="radio2" name="radio" type="radio" />
+            <label htmlFor="radio2">Expense</label>
+          </div>
+        </div>
+
         <button onClick={clickHandler}>Add transaction</button>
       </form>
-    </>
+    </div>
   );
 };
 
