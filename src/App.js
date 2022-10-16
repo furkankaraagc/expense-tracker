@@ -10,8 +10,8 @@ const App = () => {
       <TrackerProvider>
         <Header />
         <IncomeExpense />
-        <AddTransaction />
         <TransactionList />
+        <AddTransaction />
       </TrackerProvider>
     </div>
   );

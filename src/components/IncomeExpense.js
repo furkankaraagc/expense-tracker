@@ -11,7 +11,7 @@ const IncomeExpense = () => {
     .reduce((pre, current) => pre + current, 0);
 
   useEffect(() => {
-    setBalance(Math.abs(sumUpIncome - sumUpExpense));
+    setBalance(sumUpIncome - sumUpExpense);
   }, [income, expense, setBalance, sumUpExpense, sumUpIncome]);
 
   return (
@@ -20,6 +20,7 @@ const IncomeExpense = () => {
         <h2>Income</h2>
         <h2 className="amount">${sumUpIncome}.00</h2>
       </div>
+      <hr />
       <div className="expense">
         <h2>Expense</h2>
         <h2 className="amount">${sumUpExpense}.00</h2>

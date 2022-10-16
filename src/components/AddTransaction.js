@@ -13,6 +13,8 @@ const AddTransaction = () => {
     title,
     income,
     expense,
+    isIncome,
+    setIsIncome,
   } = useTracker();
   const ref1 = useRef(null);
   const ref2 = useRef(null);
@@ -26,20 +28,39 @@ const AddTransaction = () => {
   };
 
   const clickHandler = (e) => {
-    setTransaction([
-      ...transaction,
-      { title: title, amount: amount, id: Math.random() },
-    ]);
-    setAmount("");
-    setTitle("");
+    if (title !== "" && amount !== "") {
+      if (isIncome) {
+        setTransaction([
+          ...transaction,
+          {
+            title: title,
+            amount: amount,
+            id: Math.random(),
+          },
+        ]);
+      } else {
+        setTransaction([
+          ...transaction,
+          {
+            title: title,
+            amount: -amount,
+            id: Math.random(),
+          },
+        ]);
+      }
+      setTitle("");
+      setAmount("");
+    }
     checkHandler();
     e.preventDefault();
   };
   const checkHandler = () => {
-    if (ref1.current.checked) {
-      setIncome([...income, amount]);
-    } else {
-      setExpense([...expense, amount]);
+    if (title !== "" && amount !== "") {
+      if (ref1.current.checked) {
+        setIncome([...income, amount]);
+      } else {
+        setExpense([...expense, amount]);
+      }
     }
   };
 
@@ -54,7 +75,6 @@ const AddTransaction = () => {
           value={title}
           className="title"
           type="text"
-          required
         />
         <label htmlFor=""> Amount:</label>
         <input
@@ -62,21 +82,31 @@ const AddTransaction = () => {
           value={amount}
           className="amount"
           type="number"
-          required
         />
         <div className="radio">
           <div>
             <input
+              onChange={() => setIsIncome(!isIncome)}
               ref={ref1}
               className="radio1"
-              name="radio"
               type="radio"
+              name="radio"
+              id="radio1"
               defaultChecked
             />
-            <label htmlFor="radio1">Income</label>
+            <label className="label1" htmlFor="radio1">
+              Income
+            </label>
           </div>
           <div>
-            <input ref={ref2} className="radio2" name="radio" type="radio" />
+            <input
+              onChange={() => setIsIncome(!isIncome)}
+              ref={ref2}
+              className="radio2"
+              name="radio"
+              type="radio"
+              id="radio2"
+            />
             <label htmlFor="radio2">Expense</label>
           </div>
         </div>

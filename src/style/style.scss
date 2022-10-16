@@ -4,12 +4,24 @@
   padding: 0;
 }
 
+body {
+  background-color: #e8dfca;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: #256d85;
+  color: white;
+}
+
 .app {
   width: 400px;
   margin: 30px auto;
-  border: 1px solid;
   border-radius: 20px;
   padding: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .header {
@@ -24,8 +36,8 @@
   border-radius: 20px;
   margin: 30px 10px;
   display: flex;
-  border: 1px solid;
   text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   .income,
   .expense {
     padding: 20px;
@@ -46,7 +58,7 @@
     margin-bottom: 30px;
   }
   .form {
-    border: 1px solid;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -54,6 +66,9 @@
     gap: 7px;
     label {
       font-size: 20px;
+    }
+    .radio label {
+      cursor: pointer;
     }
     .title,
     .amount {
@@ -65,6 +80,7 @@
     button {
       padding: 5px;
       font-size: 15px;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     }
 
     .radio {
@@ -89,19 +105,35 @@
     gap: 20px;
     li {
       display: flex;
-      border: 1px solid;
       align-items: center;
       justify-content: space-between;
       padding: 15px;
       border-radius: 10px;
       font-size: 20px;
-      span {
-        margin-left: 200px;
+      .btn-delete {
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        background-color: 3F72AF;
+        border: none;
       }
+
+      div {
+        overflow-wrap: break-word;
+        max-width: 200px;
+      }
+    }
+    li.income_item {
+      border: 2px solid green;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    }
+    li.expense_item {
+      border: 2px solid red;
+
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     }
 
     button {
       padding: 5px;
+      margin-left: 10px;
     }
   }
 }

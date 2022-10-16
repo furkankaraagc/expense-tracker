@@ -4,12 +4,24 @@
   padding: 0;
 }
 
+body {
+  background-color: #e8dfca;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: #256d85;
+  color: white;
+}
+
 .app {
   width: 400px;
   margin: 30px auto;
-  border: 1px solid;
   border-radius: 20px;
   padding: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .header {
@@ -24,8 +36,8 @@
   border-radius: 20px;
   margin: 30px 10px;
   display: flex;
-  border: 1px solid;
   text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .incomeExpense .income,
 .incomeExpense .expense {
@@ -47,7 +59,7 @@
   margin-bottom: 30px;
 }
 .addTransaction .form {
-  border: 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -56,6 +68,9 @@
 }
 .addTransaction .form label {
   font-size: 20px;
+}
+.addTransaction .form .radio label {
+  cursor: pointer;
 }
 .addTransaction .form .title,
 .addTransaction .form .amount {
@@ -67,6 +82,7 @@
 .addTransaction .form button {
   padding: 5px;
   font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 .addTransaction .form .radio {
   display: flex;
@@ -90,16 +106,30 @@
 }
 .transactionList ul li {
   display: flex;
-  border: 1px solid;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
   border-radius: 10px;
   font-size: 20px;
 }
-.transactionList ul li span {
-  margin-left: 200px;
+.transactionList ul li .btn-delete {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  background-color: 3F72AF;
+  border: none;
+}
+.transactionList ul li div {
+  overflow-wrap: break-word;
+  max-width: 200px;
+}
+.transactionList ul li.income_item {
+  border: 2px solid green;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.transactionList ul li.expense_item {
+  border: 2px solid red;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 .transactionList ul button {
   padding: 5px;
+  margin-left: 10px;
 }/*# sourceMappingURL=style.css.map */

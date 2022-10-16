@@ -11,6 +11,8 @@ const Provider = ({ children }) => {
   const [expense, setExpense] = useState([]);
   const [balance, setBalance] = useState("");
 
+  const [isIncome, setIsIncome] = useState(true);
+
   const data = {
     title,
     setTitle,
@@ -24,6 +26,8 @@ const Provider = ({ children }) => {
     setExpense,
     balance,
     setBalance,
+    isIncome,
+    setIsIncome,
   };
 
   return <Context.Provider value={data}>{children}</Context.Provider>;

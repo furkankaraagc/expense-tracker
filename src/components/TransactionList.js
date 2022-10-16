@@ -1,7 +1,14 @@
 import { useTracker } from "../context/TrackerContext";
 
 const TransactionList = () => {
-  const { transaction, setTransaction } = useTracker();
+  const {
+    transaction,
+    setTransaction,
+    setIncome,
+    setExpense,
+    income,
+    expense,
+  } = useTracker();
 
   return (
     <div className="transactionList">
@@ -9,18 +16,31 @@ const TransactionList = () => {
       <hr />
       <ul>
         {transaction.map((transactions) => (
-          <li key={transactions.id}>
+          <li
+            key={transactions.id}
+            className={transactions.amount > 0 ? "income_item" : "expense_item"}
+          >
             <div>{transactions.title} </div>
-            <span>${transactions.amount}</span>
-            <button
-              onClick={() =>
-                setTransaction(
-                  transaction.filter((x) => x.id !== transactions.id)
-                )
-              }
-            >
-              X
-            </button>
+            <div>
+              <span>
+                {transactions.amount > 0 ? "" : "-"}$
+                {Math.abs(transactions.amount)}
+              </span>
+              <button
+                className="btn-delete"
+                onClick={() => {
+                  setTransaction(
+                    transaction.filter((x) => x.id !== transactions.id)
+                  );
+                  setIncome(income.filter((x) => x !== transactions.amount));
+                  setExpense(expense.filter((x) => -x !== transactions.amount));
+
+                  return;
+                }}
+              >
+                X
+              </button>
+            </div>
           </li>
         ))}
       </ul>
